@@ -1,17 +1,20 @@
-SRCS		=	megaphone.cpp
+SRCS		=	srcs/main.cpp	\
+				srcs/PhonebookClass.cpp	\
+				srcs/ContactClass.cpp	\
+				
 
-OBJS_SRCS	=	$(SRCS:.cpp=.o)
+OBJS_SRCS	=	$(SRCS:.cpp=.o) 
 
-.c.o:
+.cpp.o:
 				${CC} ${CFLAGS} -c ${INCLUDES} $< -o ${<:.cpp=.o}
 
 INCLUDES	=	-I./includes/
 
-NAME		=	megaphone
+NAME		=	Phonebook
 
 CFLAGS      =   -Wall -Werror -Wextra
 
-CC			=	clang++
+CC			=	c++
 
 RM			=	rm -f
 

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Annuaire.class.hpp                                 :+:      :+:    :+:   */
+/*   PhonebookClass.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 09:49:04 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/08 11:51:17 by cmarien          ###   ########.fr       */
+/*   Updated: 2021/12/08 15:41:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANNUAIRE_CLASS_HPP
-# define ANNUAIRE_CLASS_HPP
+#ifndef PHONECLASS_HPP
+# define PHONECLASS_HPP
 
-#include <string>
+#include "ContactClass.hpp"
 
-class	contact	{
-
-private:
-
-public:
-	contact(void);
-	~contact(void);
-	std::string	coords[5];
-	std::string coords_name[5];
-};
-
-class	phone_book	{
-
-private:
+class	Phonebook	{
 
 public:
 
 	int	index;
-	phone_book(void);
-	~phone_book(void);
-	contact contact[8];
+	Phonebook(void);
+	~Phonebook(void);
+	contact contacts[8];
 };
 
 #endif

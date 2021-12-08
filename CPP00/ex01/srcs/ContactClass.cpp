@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Annuaire.class.cpp                                 :+:      :+:    :+:   */
+/*   ContactClass.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 09:48:56 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/08 12:33:12 by cmarien          ###   ########.fr       */
+/*   Created: 2021/12/08 15:30:32 by user42            #+#    #+#             */
+/*   Updated: 2021/12/08 15:45:50 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Annuaire.class.hpp"
-
-phone_book::phone_book(void)
-{
-	phone_book::index = -1;
-	return ;
-}
-
-phone_book::~phone_book(void)
-{
-	return ;
-}
+#include "ContactClass.hpp"
 
 contact::contact(void)
 {
