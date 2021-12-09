@@ -2,7 +2,7 @@ SRCS		=	megaphone.cpp
 
 OBJS_SRCS	=	$(SRCS:.cpp=.o)
 
-.c.o:
+.cpp.o:
 				${CC} ${CFLAGS} -c ${INCLUDES} $< -o ${<:.cpp=.o}
 
 INCLUDES	=	-I./includes/
