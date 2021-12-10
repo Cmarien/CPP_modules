@@ -1,6 +1,5 @@
 SRCS		=	srcs/main.cpp	\
-				srcs/PhonebookClass.cpp	\
-				srcs/ContactClass.cpp	\
+				srcs/Karen.cpp	\
 				
 
 OBJS_SRCS	=	$(SRCS:.cpp=.o) 
@@ -10,11 +9,11 @@ OBJS_SRCS	=	$(SRCS:.cpp=.o)
 
 INCLUDES	=	-I./includes/
 
-NAME		=	Phonebook
+NAME		=	karenFilter
 
 CFLAGS      =   -Wall -Werror -Wextra
 
-CC			=	c++
+CC			=	clang++
 
 RM			=	rm -f
 
