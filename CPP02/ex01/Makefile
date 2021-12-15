@@ -13,7 +13,7 @@ NAME		=	a.out
 
 CFLAGS      =   -Wall -Werror -Wextra
 
-CC			=	clang++
+CC			=	c++
 
 RM			=	rm -f
 

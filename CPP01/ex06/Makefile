@@ -13,7 +13,7 @@ NAME		=	karenFilter
 
 CFLAGS      =   -Wall -Werror -Wextra
 
-CC			=	clang++
+CC			=	c++
 
 RM			=	rm -f
 

@@ -1,13 +1,17 @@
-SRCS		=	megaphone.cpp
+SRCS		=	srcs/main.cpp	\
+				srcs/HumanA.cpp	\
+				srcs/HumanB.cpp	\
+				srcs/Weapon.cpp	\
+				
 
-OBJS_SRCS	=	$(SRCS:.cpp=.o)
+OBJS_SRCS	=	$(SRCS:.cpp=.o) 
 
 .cpp.o:
 				${CC} ${CFLAGS} -c ${INCLUDES} $< -o ${<:.cpp=.o}
 
 INCLUDES	=	-I./includes/
 
-NAME		=	megaphone
+NAME		=	violence
 
 CFLAGS      =   -Wall -Werror -Wextra
 
