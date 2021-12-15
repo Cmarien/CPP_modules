@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:43:07 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 16:49:40 by cmarien          ###   ########.fr       */
+/*   Updated: 2021/12/15 17:04:24 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	tmpx = c.getX() - b.getX();
 	tmpy = c.getY() - b.getY();
 	Point	vect_bc(tmpx.toFloat(), tmpy.toFloat());
+
 
 	std::cout << "point a = " << a << std::endl;
 	std::cout << "point b = " << b << std::endl;
