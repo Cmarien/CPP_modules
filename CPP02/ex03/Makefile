@@ -1,5 +1,7 @@
 SRCS		=	srcs/main.cpp	\
 				srcs/Fixed.cpp	\
+				srcs/Point.cpp	\
+				srcs/bsp.cpp	\
 				
 
 OBJS_SRCS	=	$(SRCS:.cpp=.o) 
