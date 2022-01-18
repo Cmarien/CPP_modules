@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:36:04 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 15:46:00 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/01/18 12:13:38 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MATERIAS_HPP
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
@@ -24,8 +25,8 @@ public:
 	const Ice&	operator=(const Ice&);
 	~Ice();
 
-	virtual AMateria* clone() const;
-	virtual void use(ICharacter& target);
+	AMateria* clone() const;
+	void use(ICharacter& target);
 };
 
 
@@ -38,8 +39,8 @@ public:
 	const Cure&	operator=(const Cure&);
 	~Cure();
 
-	virtual AMateria* clone() const;
-	virtual void use(ICharacter& target);
+	AMateria* clone() const;
+	void use(ICharacter& target);
 };
 
 #endif

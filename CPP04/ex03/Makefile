@@ -1,7 +1,8 @@
 SRCS		=	srcs/main.cpp	\
 				srcs/AMateria.cpp	\
 				srcs/Materias.cpp	\
-			
+				srcs/Character.cpp	\
+				srcs/MateriaSource.cpp	\
 
 OBJS_SRCS	=	$(SRCS:.cpp=.o) 
 
@@ -12,7 +13,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	Materia
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -fsanitize=address
 
 CC			=	c++
 
