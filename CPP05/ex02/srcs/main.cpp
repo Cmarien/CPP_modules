@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:55:35 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/24 13:41:03 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/01/24 14:58:42 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 void runTest(std::string const& name, int grade)
 {
-    Form test("test", 26, 2);
+    ShrubberyCreationForm test(name);
+
     try {
         std::cout << "< " << name << "'s test >" << std::endl;
         Bureaucrat bure(name, grade);
         std::cout << bure;
 
         bure.signForm(test);
-        std::cout << test;
-        test.beSigned(bure);
-
+        test.execute(bure);
         std::cout << std::endl;
     }
 	catch (std::exception& e)

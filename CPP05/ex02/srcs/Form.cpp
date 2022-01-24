@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 11:10:47 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/24 13:42:33 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/01/24 14:52:14 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ const char* Form::AlreadySignedException::what() const throw()
 	return "Form is already signed.";
 }
 
+const char* Form::GradeTooLowExecException::what() const throw()
+{
+	return "Grade is too low to exec.";
+}
+
 void	Form::checkGrade(int newGrade)
 {
 	if (newGrade > 150)
@@ -43,6 +48,10 @@ int	Form::getSignGrade() const
 int	Form::getExecGrade() const
 {
 	return(this->grade_exec);
+}
+
+void	Form::execute(const Bureaucrat&) const
+{
 }
 
 const std::string	Form::getName() const
