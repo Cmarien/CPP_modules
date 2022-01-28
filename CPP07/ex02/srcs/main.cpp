@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:20:41 by user42            #+#    #+#             */
-/*   Updated: 2022/01/28 17:56:54 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/28 18:00:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(void)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
 	Array<int> tmp = numbers;
     Array<int> test(tmp);
 
