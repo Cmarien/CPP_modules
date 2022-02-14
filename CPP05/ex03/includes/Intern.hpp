@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 12:48:20 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 13:37:14 by cmarien          ###   ########.fr       */
+/*   Created: 2022/01/26 14:09:21 by cmarien           #+#    #+#             */
+/*   Updated: 2022/01/26 14:37:08 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-class PresidentialPardonForm : public Form
+class Intern
 {
 private:
-	const std::string target;
+
 public:
-	PresidentialPardonForm(std::string target);
-	PresidentialPardonForm(const PresidentialPardonForm&);
-	~PresidentialPardonForm();
+	Intern();
+	Intern(const Intern&);
+	~Intern();
 
-	const PresidentialPardonForm&	operator=(const PresidentialPardonForm&);
-	void	exec() const;
-	const std::string	getTarget() const;
+	const Intern&	operator=(const Intern&);
+	Form	*makeForm(std::string formName, std::string target);
+
+	class NoSuchFormException : public std::exception
+	{
+	public:
+		const char* what() const throw();
+	};
 };
-
-
 
 #endif

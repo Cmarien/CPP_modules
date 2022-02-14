@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 13:59:02 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/24 15:08:31 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/01/26 13:38:57 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	~ShrubberyCreationForm();
 	const ShrubberyCreationForm&	operator=(const ShrubberyCreationForm&);
 
-	void	execute(const Bureaucrat&) const;
+	void	exec() const;
 };
 
 #endif

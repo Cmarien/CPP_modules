@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:06:36 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 14:04:41 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/01/26 14:45:18 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ const RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestF
 		(void)copy;
 		return (*this);
 }
+
 
 //Constructors/Destructor
 

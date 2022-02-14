@@ -1,9 +1,6 @@
 SRCS		=	srcs/main.cpp	\
-				srcs/Bureaucrat.cpp	\
-				srcs/Form.cpp	\
-				srcs/ShrubberyCreationForm.cpp	\
-				srcs/RobotomyRequestForm.cpp	\
-				srcs/PresidentialPardonForm.cpp	\
+
+
 
 OBJS_SRCS	=	$(SRCS:.cpp=.o) 
 
@@ -12,9 +9,9 @@ OBJS_SRCS	=	$(SRCS:.cpp=.o)
 
 INCLUDES	=	-I./includes/
 
-NAME		=	Bureaucrat
+NAME		=	easyfind
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 

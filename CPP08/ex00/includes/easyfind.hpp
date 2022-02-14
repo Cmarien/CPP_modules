@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactClass.cpp                                   :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 15:30:32 by user42            #+#    #+#             */
-/*   Updated: 2022/01/24 15:20:52 by cmarien          ###   ########.fr       */
+/*   Created: 2022/02/14 09:46:15 by cmarien           #+#    #+#             */
+/*   Updated: 2022/02/14 11:17:28 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ContactClass.hpp"
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-contact::contact(void)
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <algorithm>
+
+template<typename T>
+const typename T::const_iterator	easyfind(T &tab, int value)
 {
-	contact::coords_name[0] = "first_name";
-	contact::coords_name[1] = "last_name";
-	contact::coords_name[2] = "nickname";
-	contact::coords_name[3] = "phone_number";
-	contact::coords_name[4] = "darkest_secret";
-	return ;
+	typename T::const_iterator i = tab.begin();
+	typename T::const_iterator ie = tab.end();
+	return (std::find(i, ie, value));
 }
 
-contact::~contact(void)
-{
-	return ;
-}
+#endif
