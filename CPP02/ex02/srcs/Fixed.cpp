@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:56:27 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 14:49:44 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:49:55 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ Fixed	Fixed::operator - (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
-	std::cout << "Addition operator called" << std::endl;
+	std::cout << "Substraction operator called" << std::endl;
 	tmp.a = this->a - fixed.a;
 	return (tmp);
 }
@@ -86,7 +86,7 @@ Fixed	Fixed::operator * (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
-	std::cout << "Addition operator called" << std::endl;
+	std::cout << "Multiplication operator called" << std::endl;
 	tmp.a = this->a * fixed.toFloat();
 	return (tmp);
 }
@@ -95,7 +95,7 @@ Fixed	Fixed::operator / (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
-	std::cout << "Addition operator called" << std::endl;
+	std::cout << "Division operator called" << std::endl;
 	tmp.a = this->a / fixed.toFloat();
 	return (tmp);
 }

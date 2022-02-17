@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:56:27 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 16:47:12 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:52:39 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@
 
 Fixed::Fixed(void) : a(0)
 {
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
+	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
 Fixed::Fixed(const int nb) : a(nb << nbits)
 {
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nb)
 {
+	std::cout << "Float constructor called" << std::endl;
 	a = roundf(nb * (float)(1 << nbits));
 }
 
@@ -36,11 +40,13 @@ Fixed::Fixed(const float nb)
 
 void	Fixed::setRawBits(int const raw)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->a = raw;
 }
 
 int	Fixed::getRawBits(void) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->a);
 }
 
@@ -62,6 +68,7 @@ Fixed	Fixed::operator + (const Fixed &fixed) const
 {
 	Fixed	tmp;
 	
+	std::cout << "Addition operator called" << std::endl;
 	tmp.a = this->a + fixed.a;
 	return (tmp);
 }
@@ -70,6 +77,7 @@ Fixed	Fixed::operator - (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
+	std::cout << "Substraction operator called" << std::endl;
 	tmp.a = this->a - fixed.a;
 	return (tmp);
 }
@@ -78,6 +86,7 @@ Fixed	Fixed::operator * (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
+	std::cout << "Multiplication operator called" << std::endl;
 	tmp.a = this->a * fixed.toFloat();
 	return (tmp);
 }
@@ -86,6 +95,7 @@ Fixed	Fixed::operator / (const Fixed &fixed) const
 {
 	Fixed	tmp;
 
+	std::cout << "Division operator called" << std::endl;
 	tmp.a = this->a / fixed.toFloat();
 	return (tmp);
 }
@@ -96,12 +106,14 @@ Fixed	Fixed::operator ++ (int)
 {
 	Fixed	tmp(*this);
 
+	std::cout << "PostInc operator called" << std::endl;
 	this->a++;
 	return (tmp);
 }
 
 Fixed &	Fixed::operator ++ ()
 {
+	std::cout << "PreInc operator called" << std::endl;
 	this->a++;
 	return (*this);
 }
@@ -110,12 +122,14 @@ Fixed	Fixed::operator -- (int)
 {
 	Fixed	tmp(*this);
 	
+	std::cout << "PostDec operator called" << std::endl;
 	this->a--;
 	return (tmp);
 }
 
 Fixed &	Fixed::operator -- ()
 {
+	std::cout << "PreDec operator called" << std::endl;
 	--this->a;
 	return (*this);
 }
@@ -124,6 +138,7 @@ Fixed &	Fixed::operator -- ()
 
 bool	Fixed::operator < (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a < fixed.a)
 		return (true);
 	return (false);
@@ -131,6 +146,7 @@ bool	Fixed::operator < (const Fixed &fixed) const
 
 bool	Fixed::operator <= (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a <= fixed.a)
 		return (true);
 	return (false);
@@ -138,6 +154,7 @@ bool	Fixed::operator <= (const Fixed &fixed) const
 
 bool	Fixed::operator > (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a > fixed.a)
 		return (true);
 	return (false);
@@ -145,6 +162,7 @@ bool	Fixed::operator > (const Fixed &fixed) const
 
 bool	Fixed::operator >= (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a >= fixed.a)
 		return (true);
 	return (false);
@@ -152,6 +170,7 @@ bool	Fixed::operator >= (const Fixed &fixed) const
 
 bool	Fixed::operator == (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a == fixed.a)
 		return (true);
 	return (false);
@@ -159,6 +178,7 @@ bool	Fixed::operator == (const Fixed &fixed) const
 
 bool	Fixed::operator != (const Fixed &fixed) const
 {
+	std::cout << "Comparison operator called" << std::endl;
 	if (this->a != fixed.a)
 		return (true);
 	return (false);
@@ -204,6 +224,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& nb) {
 
 Fixed & Fixed::operator = (const Fixed &fixed)
 {
+	std::cout << "Assignation operator called" << std::endl;
 	this->a = fixed.getRawBits();
 	return (*this);
 }
@@ -212,4 +233,5 @@ Fixed & Fixed::operator = (const Fixed &fixed)
 
 Fixed::~Fixed()
 {
+	std::cout << "Destructor called" << std::endl;
 }

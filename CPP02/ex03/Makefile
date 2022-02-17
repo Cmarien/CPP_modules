@@ -13,7 +13,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	a.out
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 CC			=	c++
 

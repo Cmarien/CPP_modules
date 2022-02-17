@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:56:02 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 15:58:20 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:49:46 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(void)
 	div = Fixed(10) / Fixed(42.42f);
 	mul = Fixed(10) * Fixed(42.42f);
 	
+
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
