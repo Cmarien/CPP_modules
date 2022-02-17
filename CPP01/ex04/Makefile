@@ -10,7 +10,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	replace
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 

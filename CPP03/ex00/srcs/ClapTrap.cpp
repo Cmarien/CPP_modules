@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:06:46 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 17:35:24 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 13:06:12 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 ClapTrap::ClapTrap(void)
 {
+	this->Name = "Default";
+	this->Hitpoints = 10;
+	this->EnergyPoints = 10;
+	this->AtackDamage = 0;
 	std::cout << "Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name) : Name(name)
 {
-	std::cout << "Constructor call" << std::endl;
+	this->Hitpoints = 10;
+	this->EnergyPoints = 10;
+	this->AtackDamage = 0;
+	std::cout << "Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ClapTrap)
 {
+	std::cout << "Copy Constructor called" << std::endl;
 	*this = ClapTrap;
 }
 
@@ -33,6 +41,7 @@ const ClapTrap &	ClapTrap::operator = (const ClapTrap &clap)
 	this->Name = clap.Name;
 	this->Hitpoints = clap.Hitpoints;
 	this->EnergyPoints = clap.EnergyPoints;
+	std::cout << "Assignation operator called" << std::endl;
 	return (*this);
 }
 

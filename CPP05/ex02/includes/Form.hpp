@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 11:10:45 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 13:49:42 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:11:10 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	const	std::string name;
 	const	int	grade_sign;
 	const	int grade_exec;
-	bool	is_signed = false;
+	bool	is_signed;
 public:
 
 	Form();

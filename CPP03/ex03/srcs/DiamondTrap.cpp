@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:52:20 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 19:34:31 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 13:59:54 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 DiamondTrap::DiamondTrap(void)
 {
-	std::cout << "DiamondTrap Constructor Called" << std::endl;
+	this->Name = "Default";
+	ClapTrap::Name = this->Name + "_clap_name";
+	this->AtackDamage = FragTrap::AtackDamage;
+	this->Hitpoints = FragTrap::Hitpoints;
+	this->EnergyPoints = ScavTrap::EnergyPoints;
+	std::cout << "DiamondTrap " << this->Name << " Constructor Called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string name)
+DiamondTrap::DiamondTrap(const std::string name) : FragTrap(name), ScavTrap(name)
 {
+	ClapTrap::Name = name + "_clap_name";
 	this->Name = name;
-	FragTrap::Name = this->Name;
-	ClapTrap::Name = this->Name + "_clap_name";
 	this->AtackDamage = 30;
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
-	std::cout << "DiamondTrap Constructor Called" << std::endl;
+	std::cout << "DiamondTrap " << this->Name << " Constructor Called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &dia)

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:50:57 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/18 13:34:05 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:02:28 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 MateriaSource::MateriaSource()
 {
+	this->idx = 0;
+	std::cout << "MateriaSource Constructor" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& mat)
 {
+	std::cout << "MateriaSource Copy Constructor" << std::endl;
 	*this = mat;
 }
 
@@ -54,4 +57,5 @@ const MateriaSource&	MateriaSource::operator=(const MateriaSource& mat)
 
 MateriaSource::~MateriaSource()
 {
+	std::cout << "MateriaSource Destructor" << std::endl;
 }

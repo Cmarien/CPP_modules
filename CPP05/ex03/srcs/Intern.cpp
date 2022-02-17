@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:13:25 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 14:44:52 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:39:35 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ const char* Intern::NoSuchFormException::what() const throw()
 
 Form*	Intern::makeForm(std::string formName, std::string target)
 {
-	std::string names[3] {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
+	std::string names[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
 	Form *(*form[3])( std::string target) = {makeShrubberyForm, makeRobotomyForm, makePresidentialForm};
 	try {
 		for (int i = 0; i < 3; ++i) {
@@ -45,7 +45,7 @@ Form*	Intern::makeForm(std::string formName, std::string target)
 	catch (std::exception &e) {
 		throw Intern::NoSuchFormException();
 	}
-	return nullptr;
+	return (NULL);
 }
 
 const Intern& Intern::operator=(const Intern &copy)
@@ -58,13 +58,16 @@ const Intern& Intern::operator=(const Intern &copy)
 
 Intern::Intern()
 {
+	std::cout << "Intern Constructor" << std::endl;
 }
 
 Intern::Intern(const Intern &copy)
 {
+	std::cout << "Inter COpy CConstructor" << std::endl;
 	*this = copy;
 }
 
 Intern::~Intern()
 {
+	std::cout << "Intern Destructor" << std::endl;
 }

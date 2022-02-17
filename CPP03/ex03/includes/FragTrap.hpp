@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:19:42 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 19:23:39 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 13:42:49 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ public:
 	FragTrap(const FragTrap &);
 	FragTrap(const std::string);
 	const FragTrap&	operator=(const FragTrap &);
-	void	highFivesGuys(void);
 	~FragTrap();
 
+	void attack(std::string const & target);
+	void	highFivesGuys(void);
 };
 
 

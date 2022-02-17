@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:09:33 by user42            #+#    #+#             */
-/*   Updated: 2021/12/10 14:42:34 by user42           ###   ########.fr       */
+/*   Updated: 2022/02/17 12:30:19 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,12 @@ Karen::Karen(void)
     this->f[1] = &Karen::info;
     this->f[2] = &Karen::warning;
     this->f[3] = &Karen::error;
+    std::cout << "Karen has been created" << std::endl;
     return ;
 }
 
 Karen::~Karen(void)
 {
+    std::cout << "Karen has been deleted" << std::endl;
     return ;
 }

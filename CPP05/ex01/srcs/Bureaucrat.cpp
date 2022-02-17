@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:55:34 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/24 13:43:34 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:06:41 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,22 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat const& bureaucrat)
 
 Bureaucrat::Bureaucrat() : note(150), name("Random Bureaucrat")
 {
+	std::cout << "Bureaucrat Constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string nam, int _note) : name(nam)
 {
+	std::cout << "Bureaucrat Constructor" << std::endl;
 	checkGrade(_note);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& bureaucrat)
 {
 	*this = bureaucrat;
+	std::cout << "Bureaucrat Copy Constructor" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat Destructor" << std::endl;
 }

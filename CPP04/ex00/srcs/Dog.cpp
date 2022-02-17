@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:08 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 13:34:33 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:45:04 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Dog::Dog()
 Dog::Dog(const Dog &dog)
 {
 	*this = dog;
+	std::cout << "Dog Copy Constructor Called" << std::endl;
 }
 
 void	Dog::MakeSound() const

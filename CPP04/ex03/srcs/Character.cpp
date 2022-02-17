@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:28:28 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/18 13:34:53 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:01:24 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,20 @@ std::string const &Character::getName() const
 
 Character::Character(std::string nam) : name(nam)
 {
+	this->index = 0;
+	std::cout << "Character Constructor" << std::endl;
 }
 
 Character::Character(const Character &chara)
 {
+	std::cout << "Character Copy Constructor" << std::endl;
 	*this = chara;
 }
 
 const Character&	Character::operator=(const Character &chara)
 {
 	this->name = chara.getName();
+	this->index = chara.index;
 	return (*this);
 }
 
@@ -65,5 +69,5 @@ Character::~Character()
 	{
 		delete this->Materias[i];
 	}
-//	std::cout << "Character Desctructor Called" << std::endl;
+	std::cout << "Character Desctructor Called" << std::endl;
 }

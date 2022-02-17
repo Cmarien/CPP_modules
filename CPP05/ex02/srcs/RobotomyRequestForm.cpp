@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:06:36 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 14:04:41 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:15:22 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,16 @@ const RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestF
 
 RobotomyRequestForm::RobotomyRequestForm(std::string targe) : Form("Robotomy Request", 72, 45), target(targe)
 {
+	std::cout << "Robot Constructor" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 {
+	std::cout << "Robot Constructor" << std::endl;
 	*this = copy;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	std::cout << "Robot Destructor" << std::endl;
 }

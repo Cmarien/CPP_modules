@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:06 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 14:21:20 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:53:31 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat()
 Cat::Cat(const Cat &cat)
 {
 	*this = cat;
-	std::cout << "Deep" << std::endl;
+	std::cout << "Cat Copy Constructor Called" << std::endl;
 }
 
 void	Cat::MakeSound() const

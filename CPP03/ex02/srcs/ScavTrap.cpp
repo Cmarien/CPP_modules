@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:52:40 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 19:37:57 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:02:12 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	this->Name = "Default";
+	this->Hitpoints = 100;
+	this->EnergyPoints = 50;
+	this->AtackDamage = 20;
+	std::cout << "ScavTrap " << this->Name << " constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string name)
+ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 {
 	this->Name = name;
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
 	this->AtackDamage = 20;
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "ScavTrap " <<this->Name << " constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scav)
+ScavTrap::ScavTrap(const ScavTrap &scav) :ClapTrap(scav.Name)
 {
 	*this = scav;
+	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
 }
 
 void	ScavTrap::attack(std::string const & target)
@@ -38,7 +43,7 @@ void	ScavTrap::attack(std::string const & target)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ClapTrap " << this->Name << " have enterred GateKeeper Mode" << std::endl;
+	std::cout << "ScavTrap " << this->Name << " have enterred GateKeeper Mode" << std::endl;
 }
 
 const ScavTrap &	ScavTrap::operator = (const ScavTrap &scav)
@@ -47,11 +52,10 @@ const ScavTrap &	ScavTrap::operator = (const ScavTrap &scav)
 	this->Hitpoints = scav.Hitpoints;
 	this->EnergyPoints = scav.EnergyPoints;
 	this->AtackDamage = scav.AtackDamage;
-	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
 	return (*this);
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap " << this->Name << " destructor called" << std::endl;
 }

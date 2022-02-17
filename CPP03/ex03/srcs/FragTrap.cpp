@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:19:24 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 19:09:27 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 13:57:22 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 FragTrap::FragTrap(void)
 {
+	this->Name = "Default";
 	this->Hitpoints = 100;
 	this->EnergyPoints = 100;
 	this->AtackDamage = 30;
-	std::cout << "FragTrap Constructor Called" << std::endl;
+	std::cout << "FragTrap " << this->Name << " Constructor Called" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string name)
+FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 {
 	this->Name = name;
 	this->Hitpoints = 100;
 	this->EnergyPoints = 100;
 	this->AtackDamage = 30;
-	std::cout << "FragTrag Constructor Called" << std::endl;
+	std::cout << "FragTrag " << this->Name << " Constructor Called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &frag)
@@ -41,8 +42,12 @@ const FragTrap&	FragTrap::operator=(const FragTrap &frag)
 	this->Hitpoints = frag.Hitpoints;
 	this->EnergyPoints = frag.EnergyPoints;
 	this->AtackDamage = frag.AtackDamage;
-	std::cout << "FragTrap Copy Constructor Called" << std::endl;
 	return (*this);
+}
+
+void	FragTrap::attack(std::string const & target)
+{
+	std::cout << "FragTrap " << this->Name << " atacks " << target << ", causing " << this->AtackDamage << " points of damage!" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
@@ -56,5 +61,5 @@ void	FragTrap::highFivesGuys(void)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Destructor Called" << std::endl;
+	std::cout << "FragTrap " << this->Name << " Destructor Called" << std::endl;
 }

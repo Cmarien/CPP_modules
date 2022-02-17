@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:50:55 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/18 13:13:17 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:01:13 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class MateriaSource : public IMateriaSource
 {
 private:
 	AMateria* materias[4];
-	int idx = 0;
+	int idx;
 public:
 	MateriaSource();
 	MateriaSource(const MateriaSource&);

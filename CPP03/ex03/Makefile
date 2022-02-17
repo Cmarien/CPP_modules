@@ -14,7 +14,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	Claptrap
 
-CFLAGS      =   -Wall -Werror -Wextra -Wshadow -Wno-shadow
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 

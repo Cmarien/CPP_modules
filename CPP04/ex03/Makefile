@@ -13,7 +13,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	Materia
 
-CFLAGS      =   -Wall -Werror -Wextra -fsanitize=address
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 13:18:00 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 14:33:52 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:53:19 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Brain::Brain()
 Brain::Brain(const Brain &brain)
 {
 	*this = brain;
+	std::cout << "Brain Copy Constructor Called" << std::endl;
 }
 
 

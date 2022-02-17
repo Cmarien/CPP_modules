@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:28:25 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/18 12:28:42 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:59:49 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Character : public ICharacter
 private:
 	std::string name;
 	AMateria* Materias[4];
-	int	index = 0;
+	int	index;
 public:
 	Character(std::string nam);
 	Character(const Character&);

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 12:50:50 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 14:04:38 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:14:40 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,16 @@ void	PresidentialPardonForm::exec() const
 
 PresidentialPardonForm::PresidentialPardonForm(std::string targe) : Form("Presidential Pardon", 25, 5), target(targe)
 {
+	std::cout << "President Constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
 {
+	std::cout << "President Copy Constructor" << std::endl;
 	*this = copy;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+	std::cout << "President Destructor" << std::endl;
 }

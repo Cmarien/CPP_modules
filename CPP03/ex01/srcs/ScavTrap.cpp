@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:52:40 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 18:15:42 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:14:02 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,35 @@
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	this->Name = "Default";
+	this->Hitpoints = 100;
+	this->EnergyPoints = 50;
+	this->AtackDamage = 20;
+	std::cout << "ScavTrap " << this->Name << " constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string name)
+ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 {
 	this->Name = name;
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
 	this->AtackDamage = 20;
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "ScavTrap " <<this->Name << " constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& newScav) : ClapTrap(newScav.Name)
+{
+	*this = newScav;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
+const ScavTrap &	ScavTrap::operator=(const ScavTrap &scav)
+{
+	this->Name = scav.Name;
+	this->Hitpoints = scav.Hitpoints;
+	this->EnergyPoints = scav.EnergyPoints;
+	this->AtackDamage = scav.AtackDamage;
+	return (*this);
 }
 
 void	ScavTrap::attack(std::string const & target)
@@ -38,5 +57,5 @@ void	ScavTrap::guardGate(void)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap " << this->Name << " destructor called" << std::endl;
 }

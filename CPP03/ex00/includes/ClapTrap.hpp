@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 17:06:45 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/15 17:30:22 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 13:02:24 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class ClapTrap
 {
 private:
 	std::string	Name;
-	int			Hitpoints = 10;
-	int			EnergyPoints = 10;
-	int			AtackDamage = 0;
+	int			Hitpoints;
+	int			EnergyPoints;
+	int			AtackDamage;
 public:
 	ClapTrap(void);
 	ClapTrap(const ClapTrap &ClapTrap);

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:54:18 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 13:02:54 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:45:33 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ WrongCat::WrongCat()
 WrongCat::WrongCat(const WrongCat &cat)
 {
 	*this = cat;
+	std::cout << "WrongCat Copy Constructor Called" << std::endl;
 }
 
 void	WrongCat::MakeSound() const

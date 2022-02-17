@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 11:10:47 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/26 13:50:34 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:36:38 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,21 +113,25 @@ std::ostream& operator<<(std::ostream& out, Form const& form)
 
 //Constructors/Destructor
 
-Form::Form() : name("Default"), grade_sign(150), grade_exec(150)
+Form::Form() : name("Default"), grade_sign(150), grade_exec(150), is_signed(false)
 {
+	std::cout << "Form Constructor" << std::endl;
 }
 
-Form::Form(std::string nam, int sign, int exe) : name(nam), grade_sign(sign), grade_exec(exe)
+Form::Form(std::string nam, int sign, int exe) : name(nam), grade_sign(sign), grade_exec(exe), is_signed(false)
 {
+	std::cout << "Form Constructor" << std::endl;
 	checkGrade(sign);
 	checkGrade(exe);
 }
 
 Form::Form(const Form& old) : name("Default"), grade_sign(150), grade_exec(150)
 {
+	std::cout << "Form Copy Constructor" << std::endl;
 	*this = old;
 }
 
 Form::~Form()
 {
+	std::cout << "Form Destuctor" << std::endl;
 }

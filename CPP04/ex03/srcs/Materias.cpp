@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:36:00 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/18 13:34:53 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:58:34 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ AMateria* Cure::clone() const
 
 Ice::Ice()
 {
+	std::cout << "Ice Constructor" << std::endl;
 	this->type = "ice";
 }
 
 Cure::Cure()
 {
+	std::cout << "Cure Constructor" << std::endl;
 	this->type = "cure";
 }
 
@@ -51,11 +53,13 @@ Cure::Cure()
 
 Ice::Ice(const Ice& ice)
 {
+	std::cout << "Ice Copy Constructor" << std::endl;
 	*this = ice;
 }
 
 Cure::Cure(const Cure& cure)
 {
+	std::cout << "Cure Copy Constructor" << std::endl;
 	*this = cure;
 }
 
@@ -77,10 +81,10 @@ const Cure& Cure::operator=(const Cure &cure)
 
 Ice::~Ice()
 {
-//	std::cout << "Ice Destructor Called" << std::endl;
+	std::cout << "Ice Destructor Called" << std::endl;
 }
 
 Cure::~Cure()
 {
-//	std::cout << "Cure Destructor Called" << std::endl;
+	std::cout << "Cure Destructor Called" << std::endl;
 }

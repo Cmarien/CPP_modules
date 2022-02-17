@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:55:31 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 13:00:40 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/02/17 14:45:16 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ WrongAnimal::WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal &anim)
 {
 	*this = anim;
-	std::cout << "Animal Copy Constructor Called" << std::endl;
+	std::cout << "WrongAnimal Copy Constructor Called" << std::endl;
 }
 
 void	WrongAnimal::MakeSound() const

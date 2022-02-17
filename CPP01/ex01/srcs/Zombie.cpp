@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 10:03:09 by user42            #+#    #+#             */
-/*   Updated: 2021/12/09 11:53:15 by user42           ###   ########.fr       */
+/*   Updated: 2022/02/17 12:13:12 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void    Zombie::set_name(std::string name)
 
 Zombie::Zombie()
 {
+    std::cout << "A new Zombie" << this->name << " has been created" << std::endl;
+    return ;
+}
+
+Zombie::Zombie(std::string nam)
+{
+    this->name = nam;
+    std::cout << "Zombie named " << this->name << " has been created" << std::endl;
     return ;
 }
 

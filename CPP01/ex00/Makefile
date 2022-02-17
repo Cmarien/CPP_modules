@@ -1,4 +1,4 @@
-SRCS		=	srcs/main.cpp	\
+ SRCS		=	srcs/main.cpp	\
 				srcs/Zombie.cpp	\
 				srcs/randomChump.cpp	\
 				srcs/newZombie.cpp	\
@@ -13,7 +13,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	BraiiiiiiinnnzzzZ
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 
