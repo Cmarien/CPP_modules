@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:40:47 by user42            #+#    #+#             */
-/*   Updated: 2022/01/28 10:53:11 by user42           ###   ########.fr       */
+/*   Updated: 2022/02/22 14:50:36 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void    Convert::setValues(std::string types, std::string args)
             this->display << "int: ";
             setInt(static_cast<int>(this->getDouble()));
         }
-        if (!(this->spe) && (!(this->getDouble() <= std::numeric_limits<float>::max() && this->getDouble() >= std::numeric_limits<float>::min())))
+        if (!(this->spe) && (!(this->getDouble() <= std::numeric_limits<float>::max() && this->getDouble() >= -std::numeric_limits<float>::max())))
             this->display << "float: impossible" << std::endl;
         else
         {
@@ -170,23 +170,95 @@ const std::string   Convert::getType(int index) const
 
 void    Convert::use_stoi(const std::string type, Convert &tmp)
 {   
-    tmp.intValue = std::stoi(type);
+    int i = 0;
+    int sign = 1;
+    if (type[i] == '-' || type[i] == '+')
+    {
+        if (type[i] == '-')
+            sign = -1;
+        i++;
+    }
+    while (type[i] && type[i] <= '9' && type[i] >= '0')
+    {
+        tmp.intValue *= 10;
+        tmp.intValue += (type[i] - '0');
+        i++;
+    }
+    tmp.intValue *= sign;
 }
 
 void    Convert::use_stof(const std::string type, Convert &tmp)
 {
-    tmp.floatValue = std::stof(type);
+    int i = 0;
+    int sign = 1;
+    int pow = 10;
+    float flo = 0.0f;
+    if (type[i] == '-' || type[i] == '+')
+    {
+        if (type[i] == '-')
+            sign = -1;
+        i++;
+    }
+    while (type[i] && type[i] <= '9' && type[i] >= '0')
+    {
+        tmp.floatValue *= 10;
+        tmp.floatValue += (type[i] - '0');
+        i++;
+    }
+    tmp.floatValue *= sign;
+    if (type[i] == '.')
+    {
+        i++;
+    }
+    while (type[i] && type[i] <= '9' && type[i] >= '0')
+    {
+        flo = type[i] - '0';
+        tmp.floatValue += (flo / pow) * sign;
+        pow *= 10;
+        i++;
+    }
 }
 
 void    Convert::use_stod(const std::string type, Convert &tmp)
 {
-    tmp.doubleValue = std::stod(type);
+    int i = 0;
+    int sign = 1;
+    int pow = 10;
+    double flo = 0.0;
+    if (type[i] == '-' || type[i] == '+')
+    {
+        if (type[i] == '-')
+            sign = -1;
+        i++;
+    }
+    while (type[i] && type[i] <= '9' && type[i] >= '0')
+    {
+        tmp.doubleValue *= 10;
+        tmp.doubleValue += (type[i] - '0');
+        i++;
+    }
+    tmp.doubleValue *= sign;
+    if (type[i] == '.')
+    {
+        i++;
+    }
+    while (type[i] && type[i] <= '9' && type[i] >= '0')
+    {
+        flo = type[i] - '0';
+        tmp.doubleValue += (flo / pow) * sign;
+        pow *= 10;
+        i++;
+    }
 }
 
 //Constructors/Destructor
 
-Convert::Convert()
+Convert::Convert() : charValue(0), intValue(0), floatValue(0.0f), doubleValue(0.0), spe(false)
 {
+    std::cout << "Convert Constructor" << std::endl;
+    this->types[0] = "int";
+    this->types[1] = "float";
+    this->types[2] = "double";
     this->f[0] = &Convert::use_stoi;
     this->f[1] = &Convert::use_stof;
     this->f[2] = &Convert::use_stod;
@@ -194,11 +266,13 @@ Convert::Convert()
 
 Convert::Convert(const Convert &copy)
 {
+    std::cout << "Convert Copy Constructor" << std::endl;
     *this = copy;
 }
 
 Convert::~Convert()
 {
+    std::cout << "Convert Destructor" << std::endl;
 }
 
 //Overloads

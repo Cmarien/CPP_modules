@@ -11,7 +11,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	Identify
 
-CFLAGS      =   -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 

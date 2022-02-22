@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:29:51 by user42            #+#    #+#             */
-/*   Updated: 2022/01/28 12:25:04 by user42           ###   ########.fr       */
+/*   Updated: 2022/02/22 15:09:18 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void    identify(Base &p)
 {
     try
     {
-        dynamic_cast<a&>(p);
+        a& tmp = dynamic_cast<a&>(p);
+        static_cast<void>(tmp);
         std::cout << "A" << std::endl;
         return ;
     }
@@ -66,7 +67,8 @@ void    identify(Base &p)
     }
     try
     {
-        dynamic_cast<b&>(p);
+        b& tmp = dynamic_cast<b&>(p);
+        static_cast<void>(tmp);
         std::cout << "B" << std::endl;
         return ;
     }
@@ -74,7 +76,8 @@ void    identify(Base &p)
     }
     try
     {
-        dynamic_cast<c&>(p);
+        c& tmp = dynamic_cast<c&>(p);
+        static_cast<void>(tmp);
         std::cout << "C" << std::endl;
         return ;
     }

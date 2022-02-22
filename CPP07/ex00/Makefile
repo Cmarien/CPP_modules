@@ -11,7 +11,7 @@ INCLUDES	=	-I./includes/
 
 NAME		=	template
 
-CFLAGS      =   -Wall -Werror -Wextra
+CFLAGS      =   -Wall -Werror -Wextra -std=c++98
 
 CC			=	c++
 
