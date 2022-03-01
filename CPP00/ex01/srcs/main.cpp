@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:03:33 by cmarien           #+#    #+#             */
-/*   Updated: 2022/03/01 09:51:08 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/01 10:49:38 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ void	display_10(std::string str)
 		std::cout << ".";
 	}
 	std::cout << "|";
+}
+
+int		checkCin(std::string &tmp)
+{
+	int index = 0;
+	while(tmp[index] && (tmp[index] == ' ' || tmp[index] == '\t' || tmp[index] == '\n'))
+		index++;
+	if (tmp[index])
+	{
+		tmp.erase(0, index);
+		return 1;
+	}
+	return 0;
 }
 
 void	cmd_search(Phonebook *Phonebook)
@@ -60,7 +73,7 @@ void	cmd_search(Phonebook *Phonebook)
 		index = 9;
 	else
 		index = tmp[0] - '0';
-	if (index <= Phonebook->getIndex())
+	if (index <= Phonebook->getIndex() && index < 8)
 	{
 		jdex = -1;
 		while (++jdex < 5)
@@ -80,16 +93,14 @@ void	cmd_add(Phonebook *Phonebook)
 
 	index = -1;
 	Phonebook->setIndex();
-	if (Phonebook->getIndex() >= 8)
-		std::cout << "Already 8 membres in the book" << std::endl;
-	else
+	while (index++ < 4)
 	{
-		while (index++ < 4)
-		{
-			std::cout << Phonebook->contacts[Phonebook->getIndex()].getCoordName(index) << std::endl;
-			std::getline(std::cin, tmp);
-			Phonebook->contacts[Phonebook->getIndex()].setCoord(tmp, index);
-		}
+		std::cout << Phonebook->contacts[Phonebook->getJdex()].getCoordName(index) << std::endl;
+		std::getline(std::cin, tmp);
+		if (checkCin(tmp))
+			Phonebook->contacts[Phonebook->getJdex()].setCoord(tmp, index);
+		else
+			index--;
 	}
 }
 
