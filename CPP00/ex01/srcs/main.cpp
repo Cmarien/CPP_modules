@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:03:33 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/08 15:52:46 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/01 09:51:08 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,35 @@ void	cmd_search(Phonebook *Phonebook)
 	int		index;
 	int		jdex;
 	char	c;
+	std::string tmp;
 
 	index = -1;
 	jdex = -1;
 	display_10("index");
 	while (++jdex < 3)
-		display_10(Phonebook->contacts->coords_name[jdex]);
+		display_10(Phonebook->contacts->getCoordName(jdex));
 	std::cout << std::endl;
-	while (++index <= Phonebook->index && index < 8)
+	while (++index <= Phonebook->getIndex() && index < 8)
 	{
 		jdex = -1;
 		c = '0' + index;
 		std::cout << "         " << c << "|";
 		while (++jdex < 3)
-			display_10(Phonebook->contacts[index].coords[jdex]);
+			display_10(Phonebook->contacts[index].getCoord(jdex));
 		std::cout << std::endl;
 	}
 	std::cout << "Enter index : ";
-	std::cin >> index;
-	if (index <= Phonebook->index)
+	std::cin >> tmp;
+	if (tmp.length() > 1)
+		index = 9;
+	else
+		index = tmp[0] - '0';
+	if (index <= Phonebook->getIndex())
 	{
 		jdex = -1;
 		while (++jdex < 5)
 		{
-			std::cout << Phonebook->contacts[index].coords_name[jdex] << " : " << Phonebook->contacts[index].coords[jdex] << std::endl;
+			std::cout << Phonebook->contacts[index].getCoordName(jdex) << " : " << Phonebook->contacts[index].getCoord(jdex) << std::endl;
 		}
 	}
 	else
@@ -71,17 +76,19 @@ void	cmd_search(Phonebook *Phonebook)
 void	cmd_add(Phonebook *Phonebook)
 {
 	int	index;
+	std::string tmp;
 
 	index = -1;
-	Phonebook->index++;
-	if (Phonebook->index >= 8)
+	Phonebook->setIndex();
+	if (Phonebook->getIndex() >= 8)
 		std::cout << "Already 8 membres in the book" << std::endl;
 	else
 	{
 		while (index++ < 4)
 		{
-			std::cout << Phonebook->contacts[Phonebook->index].coords_name[index] << std::endl;
-			std::getline(std::cin, Phonebook->contacts[Phonebook->index].coords[index]);
+			std::cout << Phonebook->contacts[Phonebook->getIndex()].getCoordName(index) << std::endl;
+			std::getline(std::cin, tmp);
+			Phonebook->contacts[Phonebook->getIndex()].setCoord(tmp, index);
 		}
 	}
 }

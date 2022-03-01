@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhonebookClass.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 09:49:04 by cmarien           #+#    #+#             */
-/*   Updated: 2021/12/08 15:41:35 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/01 09:43:11 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@
 
 class	Phonebook	{
 
-public:
-
+private:
 	int	index;
+	int jdex;
+
+public:
 	Phonebook(void);
 	~Phonebook(void);
 	contact contacts[8];
+	int		getIndex(void);
+	void	setIndex(void);
 };
 
 #endif
