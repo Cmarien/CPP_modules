@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 13:29:04 by user42            #+#    #+#             */
-/*   Updated: 2021/12/10 11:02:17 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/02 12:32:44 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ int main(int ac, char **av)
         return (1);
     str = get_string(av[1]);
     str = replace(str, av[2], av[3]);
-    std::ofstream ofs(av[1]);
+    std::string tmp = av[1];
+    tmp = tmp + ".replace";
+    std::ofstream ofs(tmp.c_str());
     ofs << str;
 	ofs.close();
     return (0);

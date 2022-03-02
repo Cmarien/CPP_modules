@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:09:33 by user42            #+#    #+#             */
-/*   Updated: 2022/02/17 12:26:17 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:38:10 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void    Karen::complain(std::string level)
     if (index == 4)
         std::cout << "Wrong Argument" << std::endl;
     else
-    {
         (this->*f[index])();
-    }
     return ; 
 }
 

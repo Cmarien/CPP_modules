@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 10:03:09 by user42            #+#    #+#             */
-/*   Updated: 2022/02/17 12:10:27 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:15:16 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    Zombie::announce()
 {
-    std::cout << "<" << this->name << ">" << "> BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::Zombie(std::string name)

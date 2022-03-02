@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 10:03:14 by user42            #+#    #+#             */
-/*   Updated: 2022/02/17 12:07:34 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:19:38 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ public:
     void    announce(void);
 };
 
-Zombie*     newZombie(std::string name);
-void		randomChump(std::string name);
 Zombie*     zombieHorde(int N, std::string name);
 
 #endif
