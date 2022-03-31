@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:55:35 by cmarien           #+#    #+#             */
-/*   Updated: 2022/02/17 15:08:47 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 12:23:57 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void runTest(std::string const& name, int grade)
         std::cout << "< " << name << "'s test >" << std::endl;
         Bureaucrat bure(name, grade);
         std::cout << bure;
-
+        
         bure.signForm(test);
         std::cout << test;
         test.beSigned(bure);

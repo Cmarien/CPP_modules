@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:34 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 12:51:27 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:01:05 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Dog();
 	Dog(const Dog&);
 	const Dog&	operator=(const Dog&);
-	~Dog();
+	virtual ~Dog();
 
 	virtual void MakeSound() const;
 };

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:06:13 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 14:35:47 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 12:03:52 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	virtual const Animal& operator=(const Animal &) = 0;
 	virtual ~Animal();
 
-	virtual void MakeSound() const;
+	virtual void MakeSound() const = 0;
 	std::string	getType() const;
 	virtual Brain *GetBrain() const = 0;
 };

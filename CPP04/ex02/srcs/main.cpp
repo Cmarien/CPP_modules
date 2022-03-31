@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:05:19 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 14:05:35 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:58:49 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(void)
 	int	i;
 
 	Animal *animals[10];
+	// Animal x;
 	i = -1;
 	while (++i < 5)
 		animals[i] = new Dog();

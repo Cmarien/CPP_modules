@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:06:05 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 14:27:27 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:51:40 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ const Animal& Animal::operator=(const Animal &anim)
 std::string Animal::getType() const
 {
 	return (this->type);
+}
+
+Brain* Animal::GetBrain() const{
+	return new Brain();
 }
 
 Animal::~Animal()

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:55:33 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 12:57:11 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:05:25 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &);
 	const WrongAnimal& operator=(const WrongAnimal &);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	void MakeSound() const;
 	std::string	getType() const;

@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:32 by cmarien           #+#    #+#             */
-/*   Updated: 2022/01/05 12:51:24 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:00:47 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Cat();
 	Cat(const Cat&);
 	const Cat&	operator=(const Cat&);
-	~Cat();
+	virtual ~Cat();
 
 	virtual void MakeSound() const;
 };

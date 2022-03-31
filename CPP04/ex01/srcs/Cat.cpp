@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:06 by cmarien           #+#    #+#             */
-/*   Updated: 2022/02/17 14:48:22 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:35:20 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Cat::Cat()
 {
 	this->type = "Cat";
-	this->_brain = new Brain();
 	std::cout << "Cat Constructor Called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Cat::Cat(const Cat &cat)

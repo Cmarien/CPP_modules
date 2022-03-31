@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:19:08 by cmarien           #+#    #+#             */
-/*   Updated: 2022/02/17 14:48:52 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:35:28 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Dog::Dog()
 {
 	this->type = "Dog";
-	this->_brain = new Brain();
 	std::cout << "Dog Constructor Called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog &dog)

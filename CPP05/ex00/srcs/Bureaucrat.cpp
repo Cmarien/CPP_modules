@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:55:34 by cmarien           #+#    #+#             */
-/*   Updated: 2022/02/17 15:04:09 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/03/31 12:14:15 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ Bureaucrat::Bureaucrat() : note(150), name("Random Bureaucrat")
 
 Bureaucrat::Bureaucrat(std::string nam, int _note) : name(nam)
 {
-	std::cout << "Bureaucrat Constructor" << std::endl;
 	checkGrade(_note);
+	std::cout << "Bureaucrat Constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& bureaucrat)
