@@ -6,7 +6,7 @@
 /*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:40:00 by user42            #+#    #+#             */
-/*   Updated: 2022/02/22 12:58:55 by cmarien          ###   ########.fr       */
+/*   Updated: 2022/04/26 12:25:10 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ private:
     std::string types[3];
     bool    spe;
 
-    void   (Convert::*f[3])(const std::string type, Convert&);
 public:
     std::stringstream display;
     Convert();
@@ -36,12 +35,8 @@ public:
     ~Convert();
     const Convert&  operator=(const Convert&);
 
-    void   use_stoi(const std::string type, Convert&);
-    void   use_stof(const std::string type, Convert&);
     void   use_stod(const std::string type, Convert&);
-    char    getChar() const;
     int     getInt() const;
-    float   getFloat() const;
     double  getDouble() const;
     void    setChar(char);
     void    setInt(int);

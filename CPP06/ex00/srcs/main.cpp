@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmarien <cmarien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 15:13:13 by user42            #+#    #+#             */
-/*   Updated: 2022/01/28 10:50:44 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/31 13:32:36 by cmarien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,27 @@ const std::string   check_dot(std::string arg, int index)
         if (!(arg[index]))
             return "double";
         if (arg[index] == 'f' && !(arg[index + 1]) && arg[index - 1] != '.')
-           return "float";
+           return "double";
     }
     else
     {
         if (!(arg[index]))
             return "double";
         if (arg[index] == 'f' && !(arg[index + 1]))
-           return "float";
+           return "double";
     }
     return "invalid";
 }
 
-const std::string   getType(std::string arg, Convert &conv)
+const std::string   getType(std::string &arg, Convert &conv)
 {
     int index = 0;
 
     if ((arg.compare("inff") == 0 || arg.compare("+inff") == 0 || arg.compare("-inff") == 0 || arg.compare("nanf") == 0))
     {
         conv.setSpe();
-        return "float";
+        arg[arg.length() - 1] = 0;
+        return "double";
     }
     if ((arg.compare("inf") == 0 || arg.compare("+inf") == 0 || arg.compare("-inf") == 0 || arg.compare("nan") == 0))
     {
@@ -72,7 +73,7 @@ const std::string   getType(std::string arg, Convert &conv)
     while (is_number(arg[index]))
         index++;
     if (!(arg[index]))
-        return "int";
+        return "double";
     if (arg[index] == '.')
         index++;
     return (check_dot(arg, index));
