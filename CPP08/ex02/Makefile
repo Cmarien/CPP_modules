@@ -9,7 +9,7 @@ OBJS_SRCS	=	$(SRCS:.cpp=.o)
 
 INCLUDES	=	-I./includes/
 
-NAME		=	span
+NAME		=	mutant
 
 CFLAGS      =   -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
